@@ -168,7 +168,7 @@ a {
 }
 
 .link-title .link {
-  transition: color 250ms linear;
+  transition: color var(--time) var(--animation-style);
 }
 
 .site-nav .link.current {
@@ -181,7 +181,7 @@ a {
   font-weight: 500;
   line-height: 1.142;
   letter-spacing: 0.02em;
-  transition: color 250ms linear;
+  transition: color var(--time) var(--animation-style);
 }
 
 .site-nav-contacts .link + .link {
@@ -274,8 +274,8 @@ a {
 }
 
 .backdrop {
-  transition-duration: 250ms;
-  transition-timing-function: linear;
+  transition-duration: var(--time);
+  transition-timing-function: var(--animation-style);
   position: fixed;
   top: 0;
   left: 0;
@@ -326,7 +326,8 @@ a {
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
 
-  transition: fill 250ms linear, background-color 250ms linear;
+  transition: fill color var(--time) var(--animation-style),
+    background-color var(--time) var(--animation-style);
 }
 
 .modal-close-button:hover {
@@ -538,7 +539,8 @@ a {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  transition: background-color 250ms linear, color 250ms linear;
+  transition: background-color var(--time) var(--animation-style),
+    color var(--time) var(--animation-style);
 }
 
 .developers-social-links:focus,
@@ -599,7 +601,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: fill 250ms linear;
+  transition: fill var(--time) var(--animation-style);
 
   border: 1px solid var(--fill-clr);
   border-radius: 4px;
@@ -664,7 +666,7 @@ a {
   font-weight: 400;
   line-height: 1.714;
   letter-spacing: 0.03em;
-  transition: color 250ms linear;
+  transition: color var(--time) var(--animation-style);
 }
 
 .mail-list {
@@ -709,7 +711,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 250ms linear;
+  transition: background-color var(--time) var(--animation-style);
 }
 
 .social-links:hover,
@@ -763,7 +765,8 @@ a {
   text-align: center;
   cursor: pointer;
   border: 0px;
-  transition: background-color 250ms linear, color 250ms linear;
+  transition: background-color var(--time) var(--animation-style),
+    color var(--time) var(--animation-style);
 }
 
 .portfolio-buttons {
