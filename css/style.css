@@ -17,6 +17,9 @@
   --fill-clr: #afb1b8;
   --linear-gradient-clr: #2f303a66;
   --box-shadow-clr: #0000001f;
+  --time: 250ms;
+  --animation-style: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-color: rgba(33, 150, 243, 0.9);
 }
 
 body {
@@ -68,6 +71,7 @@ a {
 }
 
 .site-nav .link {
+  position: relative;
   padding-top: 32px;
   padding-bottom: 32px;
   color: var(--title-text-color);
@@ -76,6 +80,62 @@ a {
   line-height: 1.142px;
   letter-spacing: 0.02em;
 }
+
+/* CURRENT LINE */
+
+.hover-line::after {
+  position: absolute;
+  content: "";
+
+  transform: translateY(27px);
+  display: block;
+  height: 4px;
+  width: 48px;
+  border-radius: 2px;
+  left: 0;
+  bottom: 0;
+
+  background-color: var(--accent-color);
+
+  animation-name: underline;
+  animation-duration: var(--time);
+  animation-timing-function: var(--animation-style);
+  animation-fill-mode: forwards;
+  transform-origin: bottom left;
+}
+
+.hover-line-portfolio:after {
+  position: absolute;
+  content: "";
+
+  transform: translateY(27px);
+  display: block;
+  height: 4px;
+  width: 78px;
+  border-radius: 2px;
+  left: 0;
+  bottom: 0;
+
+  background-color: var(--accent-color);
+
+  animation-name: underline;
+  animation-duration: var(--time);
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  transform-origin: bottom left;
+}
+
+@keyframes underline {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* CURRENT LINE */
 
 /* main nav */
 
@@ -208,6 +268,22 @@ a {
   border: 0px;
 }
 
+/* .backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  height: 1024px;
+  width: 1600px;
+  border-radius: 4px;
+  background-color: var(--second-txt-bcg-color);
+} */
+
 /* advantage section */
 
 .thumb {
@@ -303,7 +379,6 @@ a {
 .img-thumb {
   text-align: center;
   position: relative;
-  /* overflow: hidden; */
 }
 
 .img-label {
@@ -709,4 +784,46 @@ a {
 
 .last-items {
   margin-bottom: 0;
+}
+
+/* PHOTOCARD SET OVERLAY */
+
+.overlay-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.active-links:hover .photocard-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.active-links:focus .photocard-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.photocard-overlay {
+  top: 0;
+  left: 0;
+  background-color: var(--animation-color);
+  transition: transform var(--time) var(--animation-style);
+  transform: translateY(100%);
+  position: absolute;
+  width: 370px;
+  height: 294px;
+  padding-top: 63px;
+  padding-right: 24px;
+  padding-bottom: 63px;
+  padding-left: 24px;
+  opacity: 0;
+}
+
+.overlay-description {
+  color: var(--bcg-clr);
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.03em;
 }
