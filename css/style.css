@@ -471,6 +471,10 @@ a {
   letter-spacing: 0.03em;
 }
 
+.photo-text {
+  margin: 0;
+}
+
 /* Team section */
 
 .developers-photo {
