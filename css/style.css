@@ -274,12 +274,19 @@ a {
 }
 
 .backdrop {
+  transition-duration: 250ms;
+  transition-timing-function: linear;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
+
+  /* animation-name: modalScale;
+  animation-duration: 250ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards; */
 }
 
 .backdrop.is-hidden {
@@ -306,14 +313,43 @@ a {
 }
 
 .modal-close-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  padding: 0;
 
   margin-top: 8px;
   margin-right: 8px;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+  transition: fill 250ms linear, background-color 250ms linear;
 }
+
+.modal-close-button:hover {
+  fill: var(--accent-color);
+}
+.modal-close-button:focus {
+  fill: var(--accent-color);
+}
+
+.close-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* @keyframes modalScale {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+} */
 
 /* advantage section */
 
