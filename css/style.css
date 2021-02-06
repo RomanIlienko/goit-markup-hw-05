@@ -167,6 +167,10 @@ a {
   color: var(--accent-color);
 }
 
+.link-title .link {
+  transition: color 250ms linear;
+}
+
 .site-nav .link.current {
   color: var(--accent-color);
 }
@@ -177,6 +181,7 @@ a {
   font-weight: 500;
   line-height: 1.142;
   letter-spacing: 0.02em;
+  transition: color 250ms linear;
 }
 
 .site-nav-contacts .link + .link {
@@ -268,7 +273,7 @@ a {
   border: 0px;
 }
 
-/* .backdrop {
+.backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -277,12 +282,38 @@ a {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .modal {
-  height: 1024px;
-  width: 1600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: flex-end;
+
+  min-height: 528px;
+  min-width: 581px;
   border-radius: 4px;
+
   background-color: var(--second-txt-bcg-color);
-} */
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.modal-close-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+
+  margin-top: 8px;
+  margin-right: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
 
 /* advantage section */
 
@@ -471,6 +502,7 @@ a {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  transition: background-color 250ms linear, color 250ms linear;
 }
 
 .developers-social-links:focus,
@@ -531,6 +563,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: fill 250ms linear;
 
   border: 1px solid var(--fill-clr);
   border-radius: 4px;
@@ -595,6 +628,7 @@ a {
   font-weight: 400;
   line-height: 1.714;
   letter-spacing: 0.03em;
+  transition: color 250ms linear;
 }
 
 .mail-list {
@@ -639,6 +673,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 250ms linear;
 }
 
 .social-links:hover,
@@ -692,6 +727,7 @@ a {
   text-align: center;
   cursor: pointer;
   border: 0px;
+  transition: background-color 250ms linear, color 250ms linear;
 }
 
 .portfolio-buttons {
